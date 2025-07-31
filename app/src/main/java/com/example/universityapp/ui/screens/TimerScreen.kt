@@ -7,6 +7,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -78,14 +79,13 @@ fun Timer(
     }
 }
 
-
 @Composable
 fun TimerText(seconds: Int) {
     val minutes = seconds / 60
     val remainingSeconds = seconds % 60
     Text(
         text = String.format("%02d:%02d", minutes, remainingSeconds),
-        color = Color.White,
+        color = MaterialTheme.colorScheme.onSurface,
         fontSize = 72.sp,
         fontWeight = FontWeight.Light
     )
